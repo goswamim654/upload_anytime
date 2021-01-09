@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Snaplava</title>
+	<link href="https://www.snaplava.com/assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.snaplava.com/assets/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- <link href="https://www.snaplava.com/assets/fonts/Lato/latofonts.css" rel="stylesheet">
+    <link href="https://www.snaplava.com/assets/fonts/LatoLatin/latolatinfonts.css" rel="stylesheet"> -->
+    <link href="https://www.snaplava.com/assets/css/fonts-style.css" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <link href="https://www.snaplava.com/assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="https://www.snaplava.com/assets/css/sidebar.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="https://www.snaplava.com/assets/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<!-- jQuery library -->
+    <script src="https://www.snaplava.com/assets/js/jquery-v3.2.1.min.js"></script>
+</head>
+<body class="colorBg">
+	<div class="wrapper">
+
+		<!-- Sidebar Satrt -->
+		<nav id="sidebar">
+            <div id="dismiss">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <img src="https://www.snaplava.com/images/logo-blue.png" alt="Logo">
+            </div>
+
+            <ul class="list-unstyled components">
+            	<div class="userInfo">
+            		<span id="sideBarName"></span>
+				    <span class="userImage">
+				        <img class="img-circle" id="sideBarPhoto">
+				    </span>
+				</div>
+                <!-- <p id="sideBarName">User Name</p>
+                <p><img class="img-circle"  id="sideBarPhoto"></span></p> -->
+                <li>
+                	<a id="user-home" href="https://www.snaplava.com/home">Home</a>
+                </li>
+                <li>
+                    <a id="profileLink" href="https://www.snaplava.com/my-photos">My photos</a>
+                </li>
+                <li class="active">
+                    <a id="profileLink" href="https://www.snaplava.com/profile">Profile</a>
+                </li>
+                <li>
+                    <a id="profileLink" href="https://www.snaplava.com/change-password">Change password</a>
+                </li>
+                <!-- <li class="visible-xs">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Categories</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        
+                    </ul>
+                </li> -->
+                <li>
+                    <a id="head-sign-out" href="javascript:void(0)">Sign out</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+            </ul> -->
+        </nav>
+		<!-- Sidebar End -->
+
+
+		<!-- Header Start -->
+		<div id="header_div" class="header">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			    <div class="container">
+				    <div class="row">
+				    	<div class="col-xs-12">
+				    		<div class="menuContainer clearfix">
+					    		<div class="navbar-header">
+						          	<a class="navbar-brand-image" href="https://www.snaplava.com/home"><img src="https://www.snaplava.com/images/logo-blue.png" alt="Logo"></a>
+						        </div>
+						        <ul id="menu-cnr" class="nav navbar-nav pull-right">
+						          	<li>
+						          	<form name="topSearchForm" id="topSearchForm" method="GET" action="https://www.snaplava.com/search">
+						          		<div class="input-group">
+		                                    <input name="search-query" id="search-query" value="" class="form-control search-form-control" type="text" placeholder="Search">
+		                                    <span id="categoriesMenuContainer" class="dropdown  mega-dropdown input-group-btn input-group-select-box">
+		                                    	<a id="categoriesMenuBtn" data-toggle="dropdown" href="#" class="btn btn-default category-btn category-icon dropdown-toggle">
+		                                           	<i class="fal fa-th"></i>
+		                                       	</a>
+		                                       	<ul id="searchBoxCategoryContainer" class="dropdown-menu mega-dropdown-menu search-menu" style="display: none;">
+		                                       		<!-- Categories will load here -->
+												</ul>
+		                                    </span>
+		                                    <span id="serachModeSelectContainer" class="dropdown  mega-dropdown input-group-btn input-group-select-box">
+		                                    	<a id="serachModeSelected" data-toggle="dropdown" href="#" class="btn btn-default category-btn dropdown-toggle">
+		                                    		<span class="divider">|</span>
+		                                           	Categories <i class="fas fa-caret-down"></i>
+		                                       	</a>
+		                                       	<ul id="searchModeSelecterContainer" class="dropdown-menu mega-dropdown-menu" style="display: none;">
+		                                       		<li><a id="searchModeUsers" href="javascript:void(0)">Users</a></li>
+		                                       		<li><a id="searchModeCategories" href="javascript:void(0)">Categories</a></li>
+												</ul>
+		                                    </span>
+		                                    <span class="input-group-btn">
+		                                    	<input type="hidden" name="search-type" id="search-type" value="categories">
+		                                    	<input type="hidden" name="search-categories" id="search-categories" value="">
+		                                       <button class="btn btn-default search-btn" type="submit" id="serach">
+		                                           <i class="fal fa-search"></i>
+		                                       </button>
+		                                    </span>
+		                                </div>
+		                            </form>
+						          	</li>
+								    <!-- <li class="dropdown  mega-dropdown hidden-xs"><a id="" class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fal fa-th"></i></a>
+								        <ul id="topMenuCategoryContainer" class="dropdown-menu mega-dropdown-menu" style="display: none;">
+								    										</ul>
+								    </li> -->
+
+						          	<li><a id="sidebarCollapse" href="javascript:void(0)"><i class="fal fa-bars"></i></a></li>
+						        </ul>
+					        </div> 
+				    	</div>
+				    </div>
+				</div> 
+			</nav>
+			<div class="banner">
+			    <div class="container">
+			        
+			    </div>
+			</div>
+		</div>
+		<!-- Header End -->
+		<!-- Content Satrt -->
+		<div class="content">
+            <div id="bodySections" class="sections">
+                <div class="container">
+                	<div class="hidden" id="emptyMessage"></div>
+                	<div class="row">
+                		<div id="profileInfoLeftContainer" class="col-sm-3">
+                			<!-- <div class="profilePicContainer profileView">
+                				<img src="https://graph.facebook.com/v2.10/10156283476376522/picture?type=normal">
+                				<div class="uploadBtnContainer">
+                					<div class="btn btn-white">
+										Follow John Willington
+									</div>
+                				</div>
+                			</div>
+                			<div class="aboutContainer">
+                				<h3>About</h3>
+                				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco</p>
+                			</div>
+                			<div class="socialInfoConatiner">
+                				<ul>
+                					<li>
+                						<div class="pull-left"><a href="javascript:void(0)">FOLLOWERS</a></div>
+                						<div class="pull-right"><strong>256</strong></div>
+                					</li>
+                					<li>
+                						<div class="pull-left"><a href="javascript:void(0)">FOLLOWING</a></div>
+                						<div class="pull-right"><strong>146</strong></div>
+                					</li>
+                					<li>
+                						<div class="pull-left"><a href="javascript:void(0)">SNAPS</a></div>
+                						<div class="pull-right"><strong>856</strong></div>
+                					</li>
+                				</ul>
+                			</div>-->
+                		</div>
+                		<div class="col-sm-9">
+                			<div class="infoContainer">
+                				<div id="profileInfoRightHalfContainer">
+                					<!-- <div class="infoSet">
+		                				<h2>John Willington<a href="edit-profile" data-toggle="tooltip" data-placement="right" title="Edit profile">Edit Profile</a></h2>
+		                				<i class="fas fa-map-marker-alt"></i>
+		                				<small>Guwahati, india</small>
+		                			</div>
+		                			<div class="infoSet">
+		                				<h3>Profession</h3>
+		                				<p>Professional Photographer, Engineer, Creative Editor</p>
+		                			</div>
+		                			<div class="infoSet">
+		                				<h3>Skills</h3>
+		                				<p>HD Photography, Adobe illustrator, Photo Finish</p>
+		                			</div>
+		                			<div class="infoSet">
+		                				<h3>Rating</h3>
+		                				<div class="profileRatingContent">
+		                					<strong>4.9</strong>
+			                				<ul class="starRating">
+			                					<li><i class="fas fa-star"></i></li>
+			                					<li><i class="fas fa-star"></i></li>
+			                					<li><i class="fas fa-star"></i></li>
+			                					<li><i class="fas fa-star"></i></li>
+			                					<li><i class="fas fa-star"></i></li>
+			                				</ul>
+		                				</div>
+		                			</div>
+		                			<div class="infoSet">
+		                				<div class="infoButtonsContainer">
+		                					<span class="icon"><i class="fas fa-camera-alt"></i></span>
+		                					<p>Available for paid photography</p>
+		                				</div>
+										<div class="infoButtonsContainer">
+		                					<a class="btn btn-white" href="javascript:void(0)"><i class="fas fa-comment"></i>&nbsp; SEND MESSAGE</a>
+		                				</div>
+		                			</div> -->
+                				</div>
+                				
+
+	                			<div id="snapsWholeContainer" class="snapsConatiner hidden">
+	                				<h3>SNAPS</h3>
+	                				<div class="snapContainer">
+	                					<input type="hidden" name="next_page" id="next_page" value="">
+	                					<ul id="userSnapsContainer">
+	                						<!-- Snaps will load here -->
+	                					</ul>
+	                				</div>
+	                			</div>
+                			</div>
+                		</div> 
+                	</div>
+                	<!-- View All Followers Modal Start -->
+					<div class="modal fade" id="viewAllFollowersModal" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 id="viewAllFollowersModalTitle" class="modal-title"></h4>
+					        </div>
+					        <div class="modal-body viewAllUsersGridContainer">
+					        	<p id="FollowersloadingText" class="text-center hidden">Loading..</p>
+						        <ul id="viewAllFollowersContainer">
+	                				
+	                			</ul>
+	                			<input type="hidden" name="viewall_followers_next_page" id="viewall_followers_next_page" value="">
+	                			<input type="hidden" name="isOpenedFollowers" id="isOpenedFollowers" value="">
+					        </div>
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        </div>
+					      </div>
+					      
+					    </div>
+					</div>
+					<!-- View All Followers Modal End -->
+					<!-- View All Followings Modal Start -->
+					<div class="modal fade" id="viewAllFollowingsModal" role="dialog">
+					    <div class="modal-dialog">
+					    
+					      <!-- Modal content-->
+					      <div class="modal-content">
+					        <div class="modal-header">
+					          <button type="button" class="close" data-dismiss="modal">&times;</button>
+					          <h4 id="viewAllFollowingsModalTitle" class="modal-title"></h4>
+					        </div>
+					        <div class="modal-body viewAllUsersGridContainer">
+					        	<p id="FollowingsloadingText" class="text-center hidden">Loading..</p>
+						        <ul id="viewAllFollowingsContainer">
+	                				
+	                			</ul>
+	                			<input type="hidden" name="viewall_followings_next_page" id="viewall_followings_next_page" value="">
+	                			<input type="hidden" name="isOpenedFollowings" id="isOpenedFollowings" value="">
+					        </div>
+					        <div class="modal-footer">
+					          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					        </div>
+					      </div>
+					      
+					    </div>
+					</div>
+					<!-- View All Followings Modal End -->
+                </div>
+            </div>
+        </div>
+		<!-- Content End -->
+		<!-- Footer Satrt -->
+		<footer>
+			<div class="bg-white">
+				<div class="container">
+    				<div class="row">
+        				<div class="col-sm-12">
+        					<div class="footer-content"><small>© Copyright 2018, Alegra labs</small></div>
+        				</div> 
+    				</div>
+    			</div>
+    		</div>
+        </footer>
+		<!-- Footer End -->
+		<div class="pageLoader">
+			<div class="loader">
+				<div class="loadingText">Loading..</div>
+				<div class="loadingImage"><img src="https://www.snaplava.com/images/snaplava.gif" alt="Loading.."></div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<!-- Js libraries start -->
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://www.snaplava.com/assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://www.snaplava.com/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://www.snaplava.com/assets/js/config.js"></script>
+	<script src="https://www.snaplava.com/assets/js/custom.js"></script>
+	<script src="https://www.snaplava.com/assets/js/logedInUsers.js"></script>
+	<script src="https://www.snaplava.com/assets/js/set-star-rating-script.js"></script>
+	<script src="https://www.snaplava.com/assets/js/profile.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').fadeOut();
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').fadeIn();
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+
+        });
+    </script>
+	<!-- Js libraries end -->
+</body>
+</html>

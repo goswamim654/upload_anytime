@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Snaplava</title>
+	<link href="https://www.snaplava.com/assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://www.snaplava.com/assets/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- <link href="https://www.snaplava.com/assets/fonts/Lato/latofonts.css" rel="stylesheet">
+    <link href="https://www.snaplava.com/assets/fonts/LatoLatin/latolatinfonts.css" rel="stylesheet"> -->
+    <link href="https://www.snaplava.com/assets/css/fonts-style.css" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <link href="https://www.snaplava.com/assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="https://www.snaplava.com/assets/css/sidebar.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="https://www.snaplava.com/assets/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<!-- jQuery library -->
+    <script src="https://www.snaplava.com/assets/js/jquery-v3.2.1.min.js"></script>
+</head>
+<body class="colorBg">
+	<div class="wrapper">
+
+		<!-- Sidebar Satrt -->
+		<nav id="sidebar">
+            <div id="dismiss">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <img src="https://www.snaplava.com/images/logo-blue.png" alt="Logo">
+            </div>
+
+            <ul class="list-unstyled components">
+            	<div class="userInfo">
+            		<span id="sideBarName"></span>
+				    <span class="userImage">
+				        <img class="img-circle" id="sideBarPhoto">
+				    </span>
+				</div>
+                <!-- <p id="sideBarName">User Name</p>
+                <p><img class="img-circle"  id="sideBarPhoto"></span></p> -->
+                <li>
+                	<a id="user-home" href="https://www.snaplava.com/home">Home</a>
+                </li>
+                <li>
+                    <a id="profileLink" href="https://www.snaplava.com/my-photos">My photos</a>
+                </li>
+                <li>
+                    <a id="profileLink" href="https://www.snaplava.com/profile">Profile</a>
+                </li>
+                <li>
+                    <a id="profileLink" href="https://www.snaplava.com/change-password">Change password</a>
+                </li>
+                <!-- <li class="visible-xs">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Categories</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        
+                    </ul>
+                </li> -->
+                <li>
+                    <a id="head-sign-out" href="javascript:void(0)">Sign out</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+            </ul> -->
+        </nav>
+		<!-- Sidebar End -->
+
+
+		<!-- Header Start -->
+		<div id="header_div" class="header">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			    <div class="container">
+				    <div class="row">
+				    	<div class="col-xs-12">
+				    		<div class="menuContainer clearfix">
+					    		<div class="navbar-header">
+						          	<a class="navbar-brand-image" href="https://www.snaplava.com/home"><img src="https://www.snaplava.com/images/logo-blue.png" alt="Logo"></a>
+						        </div>
+						        <ul id="menu-cnr" class="nav navbar-nav pull-right">
+						          	<li>
+						          	<form name="topSearchForm" id="topSearchForm" method="GET" action="https://www.snaplava.com/search">
+						          		<div class="input-group">
+		                                    <input name="search-query" id="search-query" value="" class="form-control search-form-control" type="text" placeholder="Search">
+		                                    <span id="categoriesMenuContainer" class="dropdown  mega-dropdown input-group-btn input-group-select-box">
+		                                    	<a id="categoriesMenuBtn" data-toggle="dropdown" href="#" class="btn btn-default category-btn category-icon dropdown-toggle">
+		                                           	<i class="fal fa-th"></i>
+		                                       	</a>
+		                                       	<ul id="searchBoxCategoryContainer" class="dropdown-menu mega-dropdown-menu search-menu" style="display: none;">
+		                                       		<!-- Categories will load here -->
+												</ul>
+		                                    </span>
+		                                    <span id="serachModeSelectContainer" class="dropdown  mega-dropdown input-group-btn input-group-select-box">
+		                                    	<a id="serachModeSelected" data-toggle="dropdown" href="#" class="btn btn-default category-btn dropdown-toggle">
+		                                    		<span class="divider">|</span>
+		                                           	Categories <i class="fas fa-caret-down"></i>
+		                                       	</a>
+		                                       	<ul id="searchModeSelecterContainer" class="dropdown-menu mega-dropdown-menu" style="display: none;">
+		                                       		<li><a id="searchModeUsers" href="javascript:void(0)">Users</a></li>
+		                                       		<li><a id="searchModeCategories" href="javascript:void(0)">Categories</a></li>
+												</ul>
+		                                    </span>
+		                                    <span class="input-group-btn">
+		                                    	<input type="hidden" name="search-type" id="search-type" value="categories">
+		                                    	<input type="hidden" name="search-categories" id="search-categories" value="">
+		                                       <button class="btn btn-default search-btn" type="submit" id="serach">
+		                                           <i class="fal fa-search"></i>
+		                                       </button>
+		                                    </span>
+		                                </div>
+		                            </form>
+						          	</li>
+								    <!-- <li class="dropdown  mega-dropdown hidden-xs"><a id="" class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fal fa-th"></i></a>
+								        <ul id="topMenuCategoryContainer" class="dropdown-menu mega-dropdown-menu" style="display: none;">
+								    										</ul>
+								    </li> -->
+
+						          	<li><a id="sidebarCollapse" href="javascript:void(0)"><i class="fal fa-bars"></i></a></li>
+						        </ul>
+					        </div> 
+				    	</div>
+				    </div>
+				</div> 
+			</nav>
+			<div class="banner">
+			    <div class="container">
+			        
+			    </div>
+			</div>
+		</div>
+		<!-- Header End -->
+		<!-- Content Satrt -->
+		<div class="content">
+            <div id="bodySections" class="sections">
+                <div class="container">
+                	<div class="row">
+                		<div class="col-sm-12">
+                			<div class="hidden" id="emptyMessage">
+                			</div>
+                			<div id="wholeContainer" class="wholeContainer hidden">
+                			<div class="photoContainer">
+                				<div class="likeContainer">					
+                					<span class="pull-left">
+                						<i data-toggle="tooltip" onclick="maximize(25)" data-placement="right" title="Expand" class="fal fa-expand cursor-pointer"></i>
+                					</span>					
+                					<span id="photoRatingContainer" class="pull-right">
+                						<!-- <a href="#" data-toggle="modal" data-target="#photoRatingModa">
+                							<div id="photoStars"></div>
+                						</a> -->
+                					</span>				
+                				</div>
+                				<img id="mainPhoto" class="setImage">
+                				<div class="socialContainer">	
+	                				<ul id="shareNdownloadContainer">
+	                					<!-- <li class="purple dropup">
+	                						<a data-toggle="dropdown" href="#" id="shareMenu" class="dropdown-toggle"><i onclick="shareTooltipToggle(this)" data-toggle="tooltip" data-placement="top" title="Share" class="fas fa-share-alt share-toggle"></i></a>								
+	                						<ul class="dropdown-menu" id="shareMenu">										
+	                							<li><a class="social-share" href="https://www.facebook.com/sharer/sharer.php?u=https://www.snaplava.com/live/public/medium_upload/1520925987000943700.png" target="_blank"><i class="fab fa-facebook-f facebook"></i></a></li>									
+	                							<li><a class="social-share" href="https://twitter.com/intent/tweet?url=https://www.snaplava.com/live/public/medium_upload/1520925987000943700.png" target="_blank"><i class="fab fa-twitter twitter"></i></a></li>								
+	                							<li><a class="social-share" href="https://plus.google.com/share?url=https://www.snaplava.com/live/public/medium_upload/1520925987000943700.png" target="_blank"><i class="fab fa-google-plus-g gplus"></i></a></li>							
+	                						</ul>							
+	                					</li>							
+	                					<li class="yellow">
+	                						<a href="javascript:void(0)" onclick="photoDetailPrepareDownloadHref(this, 19)" download=""><i data-toggle="tooltip" data-placement="top" title="Download" class="fas fa-download"></i></a>
+	                					</li> -->							
+	                				</ul>
+                				</div>
+                			</div>
+                		<!-- </div>
+                		<div class="col-sm-6"> -->
+                			<div class="photoDetailsContainer">
+                				<div class="photoDetailsSet">
+	                				<h3>Title</h3>
+	                				<p id="photoTitle"><!-- Lorem ipsum dolor --></p>
+	                			</div>
+	                			<div class="photoDetailsSet">
+	                				<h3>Description</h3>
+	                				<p id="photoDescription"><!-- Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. --></p>
+	                			</div>
+	                			<div class="photoDetailsSet">
+	                				<div class="userDetailsFirstHalf">
+	                					<a id="userPhoto" href="#">
+	                						<img title="Profile photo not available" alt="Profile photo" src="https://www.snaplava.com/live/public/thumbnail_upload/avatar.png">
+	                					</a>
+	                					<div class="photoRatingContent">
+		                					<strong id="userStarNumeric"><!-- 4.9 --></strong>
+		                					<div id="userStars"></div>
+			                				<!-- <ul class="starRating">
+			                					<li><i class="fas fa-star"></i></li>
+			                					<li><i class="fas fa-star"></i></li>
+			                					<li><i class="fas fa-star"></i></li>
+			                					<li><i class="fas fa-star"></i></li>
+			                					<li><i class="fas fa-star"></i></li>
+			                				</ul> -->
+		                				</div>
+	                				</div>
+	                				<h3 id="photoOwnerName" class="heading-blue"><!-- John Willington --></h3>
+	                				<div id="whatBestDescribesUser" class="profession"><!-- Professional Photographer --></div>
+	                				<i class="fas fa-map-marker-alt"></i>
+	                				<small id="userLocation"><!-- Guwahati, india --></small>
+	                				<ul id="followNProfileBtn" class="btnContainer">
+	                					<!-- <li><a class="btn btn-gray" href="javascript:void(0)">FOLLOW</a></li>
+	                					<li><a class="btn btn-gray" href="javascript:void(0)">PROFILE</a></li> -->
+	                				</ul>
+	                			</div>
+	                			<div id="isAvailableForPaidContainer" class="photoDetailsSet">
+	                				<span class="icon"><i class="fas fa-camera-alt"></i></span>
+	                				<p id="isAvailableForPaidText"><!-- Available for paid photography --></p>
+	                			</div>
+	                			<div class="photoDetailsSet">
+	                				<h3 id="followersOrTopratedTitle">Following or Top rated photographers</h3>
+	                				<div id="followersOrTopratedContainer" class="followingContainer">
+	                					<!-- <ul>
+	                						<li>
+	                							<img alt="Profile photo" src="https://graph.facebook.com/v2.10/10156283476376522/picture?type=normal">
+	                						</li>
+	                						<li>
+	                							<img alt="Profile photo" src="https://www.snaplava.com/live/public/thumbnail_upload/avatar.png">
+	                						</li>
+	                						<li>
+	                							<img alt="Profile photo" src="https://graph.facebook.com/v2.10/10156283476376522/picture?type=normal">
+	                						</li>
+	                						<li>
+	                							<img alt="Profile photo" src="https://www.snaplava.com/live/public/thumbnail_upload/1520873099087271400.jpg">
+	                						</li>
+	                						<li>
+	                							23 Following
+	                						</li>
+	                						<li>
+	                							View all
+	                						</li>
+	                					</ul> -->
+	                				</div>
+	                			</div>
+	                			<div class="photoDetailsSet">
+	                				<h3 id="popularPhotoHeading">Popular snaps</h3>
+	                				<div class="snapContainer">
+	                					<ul id="popularPhotoContainer">
+	                						<!-- <li>
+	                							<img src="https://www.snaplava.com/live/public/thumbnail_upload/1520873016044927800.jpg" alt="photo">
+	                						</li>
+	                						<li>
+	                							<img src="https://www.snaplava.com/live/public/thumbnail_upload/1520925987000943700.png" alt="photo">
+	                						</li>
+	                						<li>
+	                							<img src="https://www.snaplava.com/live/public/thumbnail_upload/1520873016044927800.jpg" alt="photo">
+	                						</li>
+	                						<li>
+	                							<img src="https://www.snaplava.com/live/public/thumbnail_upload/1520929328045797800.jpg" alt="photo">
+	                						</li> -->
+	                					</ul>
+	                				</div>
+	                			</div>
+                			</div>
+                		</div>
+                		<!-- View All Modal Start -->
+						<div class="modal fade" id="viewAllModal" role="dialog">
+						    <div class="modal-dialog">
+						    
+						      <!-- Modal content-->
+						      <div class="modal-content">
+						        <div class="modal-header">
+						          <button type="button" class="close" data-dismiss="modal">&times;</button>
+						          <h4 id="viewAllModalTitle" class="modal-title"></h4>
+						        </div>
+						        <div class="modal-body viewAllUsersGridContainer">
+							        <ul id="viewAllContainer">
+							        	<li id="viewAllLoading" class="loading">
+										    Loading..
+										</li>
+		                				<!-- <li>
+		                					<div class="userThumbBox">
+			                					<a href="javascript:void(0);"><img src="https://www.snaplava.com/live/public/thumbnail_upload/1520929346056064800.jpg"></a>
+			                					<div class="usersDetails">
+			                						<h4>Arnold Brown</h4>
+			                						<p><i>Newyork, USA</i></p>
+			                					</div>
+		                					</div>
+		                				</li>
+		                				<li>
+		                					<div class="userThumbBox">
+			                					<a href="javascript:void(0);"><img src="https://www.snaplava.com/live/public/thumbnail_upload/1520929337082739200.jpg"></a>
+			                					<div class="usersDetails">
+			                						<h4>Jonothen Lee</h4>
+			                						<p><i>Beijing, CHINA</i></p>
+			                					</div>
+		                					</div>
+		                				</li>
+		                				<li>
+		                					<div class="userThumbBox">
+			                					<a href="javascript:void(0);"><img src="https://www.snaplava.com/live/public/thumbnail_upload/1520925987000943700.png"></a>
+			                					<div class="usersDetails">
+			                						<h4>Arnold Brown</h4>
+			                						<p><i>Newyork, USA</i></p>
+			                					</div>
+		                					</div>
+		                				</li>
+		                				<li>
+		                					<div class="userThumbBox">
+			                					<a href="javascript:void(0);"><img src="https://www.snaplava.com/live/public/thumbnail_upload/1520929328045797800.jpg"></a>
+			                					<div class="usersDetails">
+			                						<h4>Jonothen Lee</h4>
+			                						<p><i>Beijing, CHINA</i></p>
+			                					</div>
+		                					</div>
+		                				</li>
+		                				<li>
+		                					<div class="userThumbBox">
+			                					<a href="javascript:void(0);"><img src="https://www.snaplava.com/live/public/thumbnail_upload/1520929346056064800.jpg"></a>
+			                					<div class="usersDetails">
+			                						<h4>Arnold Brown</h4>
+			                						<p><i>Newyork, USA</i></p>
+			                					</div>
+		                					</div>
+		                				</li>
+		                				<li>
+		                					<div class="userThumbBox">
+			                					<a href="javascript:void(0);"><img src="https://www.snaplava.com/live/public/thumbnail_upload/1520929337082739200.jpg"></a>
+			                					<div class="usersDetails">
+			                						<h4>Jonothen Lee</h4>
+			                						<p><i>Beijing, CHINA</i></p>
+			                					</div>
+		                					</div>
+		                				</li>
+		                				<li>
+		                					<div class="userThumbBox">
+			                					<a href="javascript:void(0);"><img src="https://www.snaplava.com/live/public/thumbnail_upload/1520925987000943700.png"></a>
+			                					<div class="usersDetails">
+			                						<h4>Arnold Brown</h4>
+			                						<p><i>Newyork, USA</i></p>
+			                					</div>
+		                					</div>
+		                				</li>
+		                				<li>
+		                					<div class="userThumbBox">
+			                					<a href="javascript:void(0);"><img src="https://www.snaplava.com/live/public/thumbnail_upload/1520929328045797800.jpg"></a>
+			                					<div class="usersDetails">
+			                						<h4>Jonothen Lee</h4>
+			                						<p><i>Beijing, CHINA</i></p>
+			                					</div>
+		                					</div>
+		                				</li> -->
+		                			</ul>
+		                			<input type="hidden" name="next_page" id="next_page" value="">
+		                			<input type="hidden" name="isOpened" id="isOpened" value="">
+						        </div>
+						        <div class="modal-footer">
+						          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+						        </div>
+						      </div>
+						      
+						    </div>
+						</div>
+						<!-- View All Modal End -->
+                		</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+		<!-- Content End -->
+		<!-- Footer Satrt -->
+		<footer>
+			<div class="bg-white">
+				<div class="container">
+    				<div class="row">
+        				<div class="col-sm-12">
+        					<div class="footer-content"><small>© Copyright 2018, Alegra labs</small></div>
+        				</div> 
+    				</div>
+    			</div>
+    		</div>
+        </footer>
+		<!-- Footer End -->
+		<div class="pageLoader">
+			<div class="loader">
+				<div class="loadingText">Loading..</div>
+				<div class="loadingImage"><img src="https://www.snaplava.com/images/snaplava.gif" alt="Loading.."></div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<!-- Js libraries start -->
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://www.snaplava.com/assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="https://www.snaplava.com/assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://www.snaplava.com/assets/js/config.js"></script>
+	<script src="https://www.snaplava.com/assets/js/custom.js"></script>
+	<script src="https://www.snaplava.com/assets/js/logedInUsers.js"></script>
+	<script src="https://www.snaplava.com/assets/js/set-star-rating-script.js"></script>
+	<script src="https://www.snaplava.com/assets/js/photo.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+            $(".viewAllUsersGridContainer").mCustomScrollbar({
+			    theme: "minimal"
+			});
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').fadeOut();
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').fadeIn();
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+	<!-- Js libraries end -->
+</body>
+</html>

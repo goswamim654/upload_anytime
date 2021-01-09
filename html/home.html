@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Snaplava</title>
+	<link href="../assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="../assets/fonts/Lato/latofonts.css" rel="stylesheet">
+    <link href="../assets/fonts/LatoLatin/latolatinfonts.css" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="../assets/css/sidebar.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="../assets/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<!-- jQuery library -->
+    <script src="../assets/js/jquery-v3.2.1.min.js"></script>
+</head>
+<body class="colorBg">
+	<div class="wrapper">
+
+		<!-- Sidebar Satrt -->
+		<nav id="sidebar">
+            <div id="dismiss">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <img src="../images/logo-blue.png" alt="Logo">
+            </div>
+
+            <ul class="list-unstyled components">
+            	<div class="userInfo">
+            		<span id="sideBarName"></span>
+				    <span class="userImage">
+				        <img class="img-circle" id="sideBarPhoto">
+				    </span>
+				</div>
+                <!-- <p id="sideBarName">User Name</p>
+                <p><img class="img-circle"  id="sideBarPhoto"></span></p> -->
+                <li class="active">
+                	<a id="user-home" href="home.html">Home</a>
+                </li>
+                <li class="visible-xs">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Categories</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li><a href="#">Abstract</a></li>
+                        <li><a href="#">Aerial</a></li>
+                        <li><a href="#">Animal</a></li>
+						<li><a href="#">Architecture</a></li>
+						<li><a href="#">Avian</a></li>
+						<li><a href="#">Black and White</a></li>
+						<li><a href="#">Cityscape</a></li>
+						<li><a href="#">Current Events</a></li>
+						<li><a href="#">Decisive Moment</a></li>
+						<li><a href="#">Defocused</a></li>
+						<li><a href="#">Documentary</a></li>
+						<li><a href="#">Emotive</a></li>
+						<li><a href="#">Expression</a></li>
+						<li><a href="#">Family</a></li>
+						<li><a href="#">Fashion</a></li>
+						<li><a href="#">Film</a></li>
+						<li><a href="#">Fine Art</a></li>
+						<li><a href="#">Food</a></li>
+						<li><a href="#">Glamour</a></li>
+						<li><a href="#">HDRI (High Dynamic Range Imaging)</a></li>
+						<li><a href="#">Humorous</a></li>
+						<li><a href="#">ICM (intentional camera movement)</a></li>
+						<li><a href="#">Industrial</a></li>
+						<li><a href="#">Infrared</a></li>
+						<li class="text-center">...</li>
+                    </ul>
+                </li>
+                <li>
+                    <a id="head-sign-out" href="javascript:void(0)">Signout</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+            </ul> -->
+        </nav>
+		<!-- Sidebar End -->
+
+
+		<!-- Header Start -->
+		<div id="header_div" class="header">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			    <div class="container">
+				    <div class="row">
+				    	<div class="col-xs-12">
+				    		<div class="menuContainer clearfix">
+					    		<div class="navbar-header">
+						          	<a class="navbar-brand-image" href="home.html"><img src="../images/logo-blue.png" alt="Logo"></a>
+						        </div>
+						        <ul id="menu-cnr" class="nav navbar-nav pull-right">
+						          	<li>
+						          		<div class="input-group">
+		                                    <input name="q" id="q" value="" class="form-control search-form-control" type="text" placeholder="Search">
+		                                    <span class="dropdown  mega-dropdown input-group-btn input-group-select-box">
+		                                    	<a data-toggle="dropdown" href="#" class="btn btn-default category-btn dropdown-toggle">
+		                                    		<span class="divider">|</span>
+		                                           	Categories <i class="fas fa-caret-down"></i>
+		                                       </a>
+		                                       <ul class="dropdown-menu mega-dropdown-menu search-menu" style="display: none;">
+													<li class="col-sm-3">
+								    					<ul>
+															<li><a href="#">Abstract</a></li>
+								                            <li><a href="#">Aerial</a></li>
+								                            <li><a href="#">Animal</a></li>
+															<li><a href="#">Architecture</a></li>
+															<li><a href="#">Avian</a></li>
+															<li><a href="#">Black and White</a></li>
+															<li><a href="#">Cityscape</a></li>
+															<li><a href="#">Current Events</a></li>
+															<li><a href="#">Decisive Moment</a></li>
+															<li><a href="#">Defocused</a></li>
+															<li><a href="#">Documentary</a></li>
+															<li><a href="#">Emotive</a></li>
+															<li><a href="#">Expression</a></li>
+															<li><a href="#">Family</a></li>
+															<li><a href="#">Fashion</a></li>
+														</ul>
+													</li>
+													<li class="col-sm-3">
+								    					<ul>
+															<li><a href="#">Film</a></li>
+															<li><a href="#">Fine Art</a></li>
+															<li><a href="#">Food</a></li>
+															<li><a href="#">Glamour</a></li>
+															<li><a href="#">HDRI (High Dynamic Range Imaging)</a></li>
+															<li><a href="#">Humorous</a></li>
+															<li><a href="#">ICM (intentional camera movement)</a></li>
+															<li><a href="#">Industrial</a></li>
+															<li><a href="#">Infrared</a></li>
+															<li><a href="#">Interior</a></li>
+															<li><a href="#">Journalism</a></li>
+															<li><a href="#">Landscape</a></li>
+															<li><a href="#">Lomo</a></li>
+															<li><a href="#">Macro</a></li>
+															<li><a href="#">Nature</a></li>
+														</ul>
+													</li>
+													<li class="col-sm-3">
+								    					<ul>
+															<li><a href="#">Nude</a></li>
+															<li><a href="#">Performance</a></li>
+															<li><a href="#">Pinhole</a></li>
+															<li><a href="#">Portrait</a></li>
+															<li><a href="#">Product</a></li>
+															<li><a href="#">Publicity</a></li>
+															<li><a href="#">Random</a></li>
+															<li><a href="#">Recycled Art</a></li>
+															<li><a href="#">Rough Camera</a></li>
+															<li><a href="#">Rural</a></li>
+															<li><a href="#">Sea and Sand</a></li>
+															<li><a href="#">Sky</a></li>
+															<li><a href="#">Snapshot</a></li>
+															<li><a href="#">Sports</a></li>
+															<li><a href="#">Still Life</a></li>
+														</ul>
+													</li>
+													<li class="col-sm-3">
+								    					<ul>
+															<li><a href="#">Suburban</a></li>
+															<li><a href="#">Swimsuit</a></li>
+															<li><a href="#">Tourist</a></li>
+															<li><a href="#">Travel</a></li>
+															<li><a href="#">Underwater</a></li>
+															<li><a href="#">Urban</a></li>
+															<li><a href="#">Vehicle</a></li>
+															<li><a href="#">Vintage</a></li>
+															<li><a href="#">Weather</a></li>
+															<li><a href="#">Wedding</a></li>
+															<li><a href="#">Stock</a></li>
+															<li><a href="#">Street Photography</a></li>
+															<li><a href="#">Panoramas/Mosaics</a></li>
+														</ul>
+													</li>
+												</ul>
+		                                    </span>
+		                                    <span class="input-group-btn">
+		                                       <button class="btn btn-default search-btn" type="submit" id="serach" name="serach">
+		                                           <i class="fal fa-search"></i>
+		                                       </button>
+		                                    </span>
+		                                </div>
+						          	</li>
+								    <li class="dropdown  mega-dropdown hidden-xs"><a id="" class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fal fa-th"></i></a>
+								        <ul class="dropdown-menu mega-dropdown-menu" style="display: none;">
+											<li class="col-sm-3">
+						    					<ul>
+													<li class="dropdown-header">Categories</li>
+													<li><a href="#">Abstract</a></li>
+						                            <li><a href="#">Aerial</a></li>
+						                            <li><a href="#">Animal</a></li>
+													<li><a href="#">Architecture</a></li>
+													<li><a href="#">Avian</a></li>
+													<li><a href="#">Black and White</a></li>
+													<li><a href="#">Cityscape</a></li>
+													<li><a href="#">Current Events</a></li>
+													<li><a href="#">Decisive Moment</a></li>
+													<li><a href="#">Defocused</a></li>
+													<li><a href="#">Documentary</a></li>
+													<li><a href="#">Emotive</a></li>
+													<li class="divider"></li>
+													<li><a href="#">Expression</a></li>
+													<li><a href="#">Family</a></li>
+													<li><a href="#">Fashion</a></li>
+												</ul>
+											</li>
+											<li class="col-sm-3">
+						    					<ul>
+													<li><a href="#">Film</a></li>
+													<li><a href="#">Fine Art</a></li>
+													<li><a href="#">Food</a></li>
+													<li><a href="#">Glamour</a></li>
+													<li><a href="#">HDRI (High Dynamic Range Imaging)</a></li>
+													<li><a href="#">Humorous</a></li>
+													<li><a href="#">ICM (intentional camera movement)</a></li>
+													<li><a href="#">Industrial</a></li>
+													<li><a href="#">Infrared</a></li>
+													<li class="divider"></li>
+													<li><a href="#">Interior</a></li>
+													<li><a href="#">Journalism</a></li>
+													<li><a href="#">Landscape</a></li>
+													<li><a href="#">Lomo</a></li>
+													<li><a href="#">Macro</a></li>
+													<li><a href="#">Nature</a></li>
+												</ul>
+											</li>
+											<li class="col-sm-3">
+						    					<ul>
+													<li><a href="#">Nude</a></li>
+													<li><a href="#">Panoramas/Mosaics</a></li>
+													<li><a href="#">Performance</a></li>
+													<li><a href="#">Pinhole</a></li>
+													<li><a href="#">Portrait</a></li>
+													<li><a href="#">Product</a></li>
+													<li class="divider"></li>
+													<li><a href="#">Publicity</a></li>
+													<li><a href="#">Random</a></li>
+													<li><a href="#">Recycled Art</a></li>
+													<li><a href="#">Rough Camera</a></li>
+													<li><a href="#">Rural</a></li>
+													<li><a href="#">Sea and Sand</a></li>
+													<li><a href="#">Sky</a></li>
+													<li><a href="#">Snapshot</a></li>
+													<li><a href="#">Sports</a></li>
+													<li><a href="#">Still Life</a></li>
+													<li><a href="#">Stock</a></li>
+													<li><a href="#">Street Photography</a></li>
+													<li class="divider"></li>
+												</ul>
+											</li>
+											<li class="col-sm-3">
+						    					<ul>
+													<li><a href="#">Suburban</a></li>
+													<li><a href="#">Swimsuit</a></li>
+													<li><a href="#">Tourist</a></li>
+													<li><a href="#">Travel</a></li>
+													<li><a href="#">Underwater</a></li>
+													<li><a href="#">Urban</a></li>
+													<li><a href="#">Vehicle</a></li>
+													<li><a href="#">Vintage</a></li>
+													<li><a href="#">Weather</a></li>
+													<li><a href="#">Wedding</a></li>
+													<!-- <li class="divider"></li>
+													<li class="dropdown-header">Fonts</li>
+						                            <li><a href="#">Glyphicon</a></li>
+													<li><a href="#">Google Fonts</a></li> -->
+												</ul>
+											</li>
+										</ul>
+								    </li>
+
+						          	<li><a id="sidebarCollapse" href="javascript:void(0)"><i class="fal fa-bars"></i></a></li>
+						        </ul>
+					        </div> 
+				    	</div>
+				    </div>
+				</div> 
+			</nav>
+			<div class="banner">
+			    <div class="container">
+			        
+			    </div>
+			</div>
+		</div>
+		<!-- Header End -->
+		<!-- Content Satrt -->
+		<div class="content">
+            <div id="bodySections" class="sections">
+                <div class="container imageContainer">
+                	<div class="uploadIcon">
+						<img src="../images/upload-icon.png" alt="Add">
+					</div>
+                	<div class="row auto-clear">
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="../images/city3.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+						<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="../images/cool_cat.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="../images/city1.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+								<div class="image-div">
+									<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="../images/city2.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="https://www.coolantarctica.com/pics-slider/index2.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="../images/city6.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="https://ae01.alicdn.com/kf/HTB1epIpSXXXXXbRXVXXq6xXFXXXD/30PCS-Sideways-Cross-Bracelet-Cool-Faith-Christian-Religious-Cross-Bracelets-Simple-Tiny-Small-Horizontal-Cross-Bracelets.jpg_640x640.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="../images/city1.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>	
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+	        					<div class="image-div">
+	        						<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+	        						<img src="../images/city2.jpg" alt="Image">
+	        						<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+	        					</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="https://www.csoinsights.com/wp-content/uploads/sites/5/2017/11/Tam-blog-image-Nov30.jpeg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="../images/city5.jpeg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+        						<div class="image-div">
+        							<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+        							<img src="../images/city3.jpg" alt="Image">
+        							<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+        						</div>
+        					</div>	
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+	        					<div class="image-div">
+	        						<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+	        						<img src="../images/city2.jpg" alt="Image">
+	        						<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+	        					</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+	        					<div class="image-div">
+	        						<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+	        						<img src="https://www.svtstatic.se/image-cms/svtse/1488466663/i-just-want-to-be-cool/article12552343.svt/ALTERNATES/medium/i-just-want-to-be-cool-svt-play-jpg" alt="Image">
+	        						<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+	        					</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+	        					<div class="image-div">
+	        						<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+	        						<img src="https://ak3.picdn.net/shutterstock/videos/23041753/thumb/1.jpg" alt="Image">
+	        						<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+	        					</div>
+        					</div>
+        				</div>
+        				<div class="col-sm-6">
+        					<div class="imageBox">
+	        					<div class="image-div">
+	        						<ul class="user-section">
+        								<li class="like-num">20</li>
+	        							<li><img alt="pic" src="../images/profile-pic.jpg"></li>
+	        						</ul>
+	        						<img src="https://shabier.com/../images/cool-wallpaper/cool-wallpaper-12.jpg" alt="Image">
+	        						<!-- Hover section start -->
+									<div class="hoverContainer">
+										<div class="likeContainer">
+											<span class="pull-left"><i class="fas fa-expand-arrows-alt"></i></span>
+	        								<span class="pull-right"><i class="fas fa-thumbs-up"></i>274</span>
+										</div>
+										<div class="detailsContainer">
+											<div class="userInfo">
+												<h3>My wild cat</h3>
+	        									<a class="userName" href="javascript:void(0)">Andrew Smith</a>
+	        									<span>28 Following</span>
+        									</div>
+        									<div class="socilaContent">
+        										<ul>
+	        										<!-- <li class="pull-left"><i class="fas fa-expand-arrows-alt"></i></li> -->
+			        								<li class="green"><i class="fas fa-envelope"></i></li>
+			        								<li class="purple"><i class="fas fa-share-alt"></i></li>
+			        								<li class="yellow"><i class="fas fa-download"></i></li>
+			        								<li class="red"><i class="fas fa-user-plus"></i></li>
+			        								<li class="blue"><i class="fas fa-thumbs-up"></i></li>
+			        								<!-- <li class="pull-right"><i class="fa fa-comment"></i></li> -->
+		        								</ul>
+        									</div>
+										</div>
+									</div>
+									<!-- Hover section end -->
+	        					</div>
+        					</div>
+        				</div>
+                	</div>
+                	
+                </div>
+            </div>
+        </div>
+		<!-- Content End -->
+		<!-- Footer Satrt -->
+		<footer> 
+        </footer>
+		<!-- Footer End -->
+	</div>
+	<div class="overlay"></div>
+	<!-- Js libraries start -->
+
+    <!-- Latest compiled JavaScript -->
+    <script src="../assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/4.9.1/firebase.js"></script>
+    <script src="../assets/js/config.js"></script>
+	<script src="../assets/js/custom.js"></script>
+	<script src="../assets/js/logedInUsers.js"></script>
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').fadeOut();
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').fadeIn();
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+	<!-- Js libraries end -->
+</body>
+</html>

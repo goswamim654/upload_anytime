@@ -1,0 +1,116 @@
+.spinner {
+	animation: previewSpin .7s 0s infinite linear;
+}
+
+@keyframes previewSpin {
+	0% {
+		transform: rotateZ(0deg);
+	}
+	100% {
+		transform: rotateZ(360deg);
+	}
+}
+#dropzone {
+    text-align: center;
+    padding-top: 132px;
+    margin: 20px 0px;
+    margin-top: 0px;
+    border: 2px dashed #dddddd;
+    cursor: default;
+    background-color: #FFF;
+    min-height: 320px;
+    color: #000;
+    font-size: 20px;
+}
+
+#dropzone.hover {
+	border-style: solid;
+	box-shadow: inset 0 3px 4px #cbcbcb;
+}
+
+#previews {
+	margin: 20px 0px;
+	max-height: 320px;
+}
+
+#previews .previewBox {
+    display: block;
+    margin: 0px auto;
+    margin-bottom: 12px;
+    height: 92px;
+    position: relative;
+    text-align: left;
+	/*float: left;
+	border: 1px solid #77c7c7;
+	padding: 7px;
+	margin-right: 7px;
+	background-color: #ededed;
+	width: 250px;
+	height: 250px;*/
+}
+#previews .imageDesc {
+	position: absolute;
+    width: 85%;
+    right: 0;
+    padding-left: 12px;
+}
+
+#previews .previewBox .closeBtn {
+	font-size:12px;
+	float: right;
+	cursor: pointer;
+	visibility: hidden;
+}
+#previews .previewBox .progress {
+	height: 10px;
+    border: 1px solid #4cae4c;
+    margin-bottom: 2px;
+	overflow: hidden;
+}
+
+#previews .previewBox .progress .progressBar {
+	background-color: #5cb85c;
+	width: 0;
+	height: 10px;
+}
+
+#previews .previewBox .title {
+	font-size: 13px;
+	font-weight: 700;
+	margin-bottom: 5px;
+	color: #000;
+}
+#previews .previewBox .progressText {
+	font-size: 12px;
+	margin-bottom: 5px;
+	color: #000;
+}
+
+#previews .previewBox .progressTextContainer .done, #previews .previewBox .progressTextContainer .fail {
+	padding: 1px;
+	font-size: 12px;
+	font-style: italic;
+	visibility: hidden;
+}
+
+#previews .previewBox .progressTextContainer .done {
+	/*color: green;
+	border-color: green;*/
+	float: right;
+}
+
+#previews .previewBox .progressTextContainer .fail {
+	color: #e44c3e;
+	border-color: #e44c3e;
+	float: right;
+}
+
+#previews .previewBox .imgHolder {
+	position: absolute;
+    left: 0;
+    width: 15%;
+}
+
+#previews .clearDiv {
+	clear: both;
+}

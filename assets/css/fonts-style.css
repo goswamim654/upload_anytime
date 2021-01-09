@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'LatoRegular';
+    src: url('../fonts/Lato/Lato-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoLight';
+    src: url('../fonts/Lato/Lato-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoLightItalic';
+    src: url('../fonts/Lato/Lato-LightItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoItalic';
+    src: url('../fonts/Lato/Lato-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoHairline';
+    src: url('../fonts/Lato/Lato-Hairline.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoHairlineItalic';
+    src: url('../fonts/Lato/Lato-HairlineItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoBold';
+    src: url('../fonts/Lato/Lato-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoBoldItalic';
+    src: url('../fonts/Lato/Lato-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoBlack';
+    src: url('../fonts/Lato/Lato-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'LatoBlackItalic';
+    src: url('../fonts/Lato/Lato-BlackItalic.ttf') format('truetype');
+}
+
+/* Load Roboto font */
+@font-face {
+    font-family: 'RobotoRegular';
+    src: url('../fonts/Roboto/Roboto-Regular.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoThin';
+    src: url('../fonts/Roboto/Roboto-Thin.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoThinItalic';
+    src: url('../fonts/Roboto/Roboto-ThinItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoMedium';
+    src: url('../fonts/Roboto/Roboto-Medium.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoMediumItalic';
+    src: url('../fonts/Roboto/Roboto-MediumItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoLight';
+    src: url('../fonts/Roboto/Roboto-Light.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoItalic';
+    src: url('../fonts/Roboto/Roboto-Italic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoLightItalic';
+    src: url('../fonts/Roboto/Roboto-LightItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoBold';
+    src: url('../fonts/Roboto/Roboto-Bold.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoBoldItalic';
+    src: url('../fonts/Roboto/Roboto-BoldItalic.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoBlack';
+    src: url('../fonts/Roboto/Roboto-Black.ttf') format('truetype');
+}
+@font-face {
+    font-family: 'RobotoBlackItalic';
+    src: url('../fonts/Roboto/Roboto-BlackItalic.ttf') format('truetype');
+}

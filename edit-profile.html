@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Snaplava</title>
+	<link href="assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- <link href="assets/fonts/Lato/latofonts.css" rel="stylesheet">
+    <link href="assets/fonts/LatoLatin/latolatinfonts.css" rel="stylesheet"> -->
+    <link href="assets/css/fonts-style.css" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <link href="assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="assets/select2/css/select2.min.css" rel="stylesheet" type="text/css" media="screen" />
+    <link href="assets/css/croppie.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/edit_profile_upload.css" rel="stylesheet" type="text/css" />
+    <link href="assets/css/sidebar.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+	<!-- jQuery library -->
+    <script src="assets/js/jquery-v3.2.1.min.js"></script>
+</head>
+<body class="colorBg">
+	<div class="wrapper">
+
+		<!-- Sidebar Satrt -->
+		<nav id="sidebar">
+            <div id="dismiss">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <img src="images/logo-blue.png" alt="Logo">
+            </div>
+
+            <ul class="list-unstyled components">
+            	<div class="userInfo">
+            		<span id="sideBarName"></span>
+				    <span class="userImage">
+				        <img class="img-circle" id="sideBarPhoto">
+				    </span>
+				</div>
+                <!-- <p id="sideBarName">User Name</p>
+                <p><img class="img-circle"  id="sideBarPhoto"></span></p> -->
+                <li>
+                	<a id="user-home" href="home">Home</a>
+                </li>
+                <li>
+                    <a id="profileLink" href="my-photos">My photos</a>
+                </li>
+                <li>
+                    <a id="profileLink" href="profile">Profile</a>
+                </li>
+                <li>
+                    <a id="profileLink" href="change-password">Change password</a>
+                </li>
+                <!-- <li class="visible-xs">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Categories</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        
+                    </ul>
+                </li> -->
+                <li>
+                    <a id="head-sign-out" href="javascript:void(0)">Sign out</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+            </ul> -->
+        </nav>
+		<!-- Sidebar End -->
+
+
+		<!-- Header Start -->
+		<div id="header_div" class="header">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			    <div class="container">
+				    <div class="row">
+				    	<div class="col-xs-12">
+				    		<div class="menuContainer clearfix">
+					    		<div class="navbar-header">
+						          	<a class="navbar-brand-image" href="home"><img src="images/logo-blue.png" alt="Logo"></a>
+						        </div>
+						        <ul id="menu-cnr" class="nav navbar-nav pull-right">
+						          	<li>
+						          	<form name="topSearchForm" id="topSearchForm" method="GET" action="search">
+						          		<div class="input-group">
+		                                    <input name="search-query" id="search-query" value="" class="form-control search-form-control" type="text" placeholder="Search">
+		                                    <span id="categoriesMenuContainer" class="dropdown  mega-dropdown input-group-btn input-group-select-box">
+		                                    	<a id="categoriesMenuBtn" data-toggle="dropdown" href="#" class="btn btn-default category-btn category-icon dropdown-toggle">
+		                                           	<i class="fal fa-th"></i>
+		                                       	</a>
+		                                       	<ul id="searchBoxCategoryContainer" class="dropdown-menu mega-dropdown-menu search-menu" style="display: none;">
+		                                       		<!-- Categories will load here -->
+												</ul>
+		                                    </span>
+		                                    <span id="serachModeSelectContainer" class="dropdown  mega-dropdown input-group-btn input-group-select-box">
+		                                    	<a id="serachModeSelected" data-toggle="dropdown" href="#" class="btn btn-default category-btn dropdown-toggle">
+		                                    		<span class="divider">|</span>
+		                                           	Categories <i class="fas fa-caret-down"></i>
+		                                       	</a>
+		                                       	<ul id="searchModeSelecterContainer" class="dropdown-menu mega-dropdown-menu" style="display: none;">
+		                                       		<li><a id="searchModeUsers" href="javascript:void(0)">Users</a></li>
+		                                       		<li><a id="searchModeCategories" href="javascript:void(0)">Categories</a></li>
+												</ul>
+		                                    </span>
+		                                    <span class="input-group-btn">
+		                                    	<input type="hidden" name="search-type" id="search-type" value="categories">
+		                                    	<input type="hidden" name="search-categories" id="search-categories" value="">
+		                                       <button class="btn btn-default search-btn" type="submit" id="serach">
+		                                           <i class="fal fa-search"></i>
+		                                       </button>
+		                                    </span>
+		                                </div>
+		                            </form>
+						          	</li>
+								    <!-- <li class="dropdown  mega-dropdown hidden-xs"><a id="" class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fal fa-th"></i></a>
+								        <ul id="topMenuCategoryContainer" class="dropdown-menu mega-dropdown-menu" style="display: none;">
+								    										</ul>
+								    </li> -->
+
+						          	<li><a id="sidebarCollapse" href="javascript:void(0)"><i class="fal fa-bars"></i></a></li>
+						        </ul>
+					        </div> 
+				    	</div>
+				    </div>
+				</div> 
+			</nav>
+			<div class="banner">
+			    <div class="container">
+			        
+			    </div>
+			</div>
+		</div>
+		<!-- Header End -->
+		<!-- Content Satrt -->
+		<div class="content">
+            <div id="bodySections" class="sections">
+                <div class="container">
+                	<div class="row">
+                		<div class="col-sm-8 col-sm-offset-2">
+                			<div class="infoContainer editProfile">
+                				<form class="" id="profileImageupload" action="" method="POST" enctype="multipart/form-data">
+                				<div class="form-group mandatoryHeading">
+                					[<label><span>*</span></label>Marked fields are mandatory]
+                				</div>
+                				<div class="form-group">
+								  	<label for="userFirstName"><span>*</span>First name:</label>
+								  	<input type="text" class="form-control validation-class" id="userFirstName" name="userFirstName" placeholder="First name">
+								</div>
+								<div class="form-group">
+								  	<label for="userLastName"><span>*</span>Last name:</label>
+								  	<input type="text" class="form-control validation-class" id="userLastName" name="userLastName" placeholder="Last name">
+								</div>
+								<div class="form-group">
+								  	<label for="userLocation"><span>*</span>Location:</label>
+								  	<input type="text" class="form-control validation-class" id="userLocation" name="userLocation" placeholder="Location">
+								  	
+								  	<input class="field form-control" id="administrative_area_level_1" name="userState" type="hidden" disabled="true"></input>
+								  	<input class="field form-control" id="postal_code" name="userPostalCode" type="hidden" disabled="true"></input>
+								  	<!-- <input class="field" id="street_number" disabled="true"></input>
+								  	<input class="field" id="route" disabled="true"></input> -->
+								</div>
+								<div class="form-group col-xs-6 removePaddingLeft">
+									<label for="userLocation">City:</label>
+									<input class="field form-control" id="locality" name="userCity" disabled="true" placeholder="City"></input>
+								</div>
+								<div class="form-group col-xs-6 removePaddingRight">
+									<label for="userLocation">Country:</label>
+									<input class="field form-control" id="country" name="userCountry" disabled="true" placeholder="Country"></input>
+								</div>
+								<div class="form-group">
+								  	<label for="userContactNo">Contact No:</label>
+								  	<input type="text" class="form-control" id="userContactNo" name="userContactNo" placeholder="Contact no">
+								</div>
+								<div id="whatBestDescribesYouContainer" class="form-group">
+								  	<!-- <label for="whatBestDescribesUser">What best describes you:</label>
+								  	<select class="form-control" id="whatBestDescribesUser" name="whatBestDescribesUser[]" placeholder="What best describes you" multiple="multiple">
+								  		<option value="Fashion Photographer">Fashion Photographer</option>
+								  		<option value="Landscape Photographer">Landscape Photographer</option>
+								  		<option value="Wildlife Photographer">Wildlife Photographer</option>
+								  		<option value="Aerial Photographer">Aerial Photographer</option>
+								  		<option value="Action / sports photographer">Action / sports photographer</option>
+								  		<option value="Pet Photographer">Pet Photographer</option>
+								  		<option value="Event Photographer">Event Photographer</option>
+								  		<option value="Real Estate and Architecture Photographer">Real Estate and Architecture Photographer</option>
+								  		<option value="Astrophotographer">Astrophotographer</option>
+								  		<option value="Photojournalist">Photojournalist</option>
+								  		<option value="Concert Photographer">Concert Photographer</option>
+								  		<option value="Macro Photographer">Macro Photographer</option>
+								  		<option value="Medical Photographer">Medical Photographer</option>
+								  		<option value="Micro Photographer">Micro Photographer</option>
+								  		<option value="School Photographer">School Photographer</option>
+								  		<option value="Baby Photographer">Baby Photographer</option>
+								  		<option value="Family Photographer">Family Photographer</option>
+								  		<option value="Satellite Photographer">Satellite Photographer</option>
+								  		<option value="Scientific Photographer">Scientific Photographer</option>
+								  		<option value="Food Photographer">Food Photographer</option>
+								  		<option value="Vehicle Photographer">Vehicle Photographer</option>
+								  		<option value="Travel Photographer">Travel Photographer</option>
+								  		<option value="Street Photographer">Street Photographer</option>
+								  		<option value="Nude/erotic Photographer">Nude/erotic Photographer</option>
+								  		<option value="Underwater Photographer">Underwater Photographer</option>
+								  		<option value="Advertising Photographer">Advertising Photographer</option>
+								  		<option value="Stock Photographer">Stock Photographer</option>
+								  		<option value="Wedding Photographer">Wedding Photographer</option>
+								  		<option value="Equine Photographer">Equine Photographer</option>
+								  		<option value="Paparazzi">Paparazzi</option>
+								  	</select> -->
+								</div>
+								<div id="userSkillsContainer" class="form-group">
+								  	<!-- <label for="userSkills">Skills:</label>
+								  	<select class="form-control" id="userSkills" name="userSkills[]" placeholder="Skills" multiple="multiple">
+								  		<option value="Skill 1">Skill 1</option>
+								  		<option value="Skill 2">Skill 2</option>
+								  		<option value="Skill 3">Skill 3</option>
+								  		<option value="Skill 4">Skill 4</option>
+								  		<option value="Skill 5">Skill 5</option>
+								  		<option value="Skill 6">Skill 6</option>
+								  		<option value="Skill 7">Skill 7</option>
+								  	</select> -->
+								</div>
+								<div id="radioBtnContainer" class="form-group">
+								  	<!-- <label><span>*</span>Are you available for paid photography:</label>
+								  	<div class="radio">
+							            <label>
+							                <input type="radio" name="isUserAvailableForPaid" value="1">
+							                <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
+							                Yes
+							            </label>
+							        </div>
+							        <div class="radio">
+							            <label>
+							                <input type="radio" name="isUserAvailableForPaid" value="0" checked>
+							                <span class="cr"><i class="cr-icon fa fa-circle"></i></span>
+							                No
+							            </label>
+							        </div> -->
+								</div>
+								<div class="form-group clearfix divider"></div>
+								<div id="uploadSection">
+									<div class="form-group previewContainer">
+										<label id="headingLabelInPreview" class="hidden"><span>*</span>Upload your portrait:</label>
+										<div id="previews">
+	                					</div>
+	                					<div id="circleImageLoaderContainer" class="hidden"><div class="loaderDiv"></div></div>
+	                					<div id="profileCorppingContainer" class="cropContainer hidden">
+	                						<img id="circle">
+	                					</div>
+									</div>
+									<div class="form-group profileDragAndDropContainer">
+										<label id="headingLabelInDragDrop"><span>*</span>Upload your portrait:</label>
+										<!-- <form class="imageUploadForm" id="profileImageupload" action="https://www.snaplava.com/live/public/api/v1/users/profile/upload-square-image" method="POST" enctype="multipart/form-data"> -->
+											<div id="dropzone">
+												Drop photos<br>inside this container
+											</div>
+											<div class="text-center">
+												<div class="imagefile btn btn-white">
+													Upload photo
+													<input type="file" id="userProfilePhoto" name="userProfilePhoto" class="imageUploadFile"/>
+												</div>
+											</div>
+											<div class="recommendation">(Recommended size 200px x 300px)</div>
+											<!-- <input type="file" id="fileselect" name="fileselect[]" multiple="multiple"/> -->
+											<input type="hidden" name="formIdent" value=""/>
+											<input type="hidden" name="profilePhoto" id="profilePhoto">
+										<!-- </form> -->
+									</div>
+								</div>
+								<div id="previewSection" class="form-group profilePicPreView hidden">
+									<div><label>Your portrait:</label></div>
+									<div class="profilePicFirstHalf">
+										<img id="squarePreview" src="https://www.snaplava.com/live/public/medium_upload/avatar.png">
+									</div>
+									<div class="profilePicSecondHalf">
+										<img id="circlePreview" src="https://www.snaplava.com/live/public/medium_upload/avatar.png">
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="aboutUserSelf">About yourself:</label>
+									<small id="remain">(200)</small>
+								  	<textarea rows="6" class="form-control" id="aboutUserSelf" name="aboutUserSelf"></textarea>
+								</div>
+								<div class="form-group text-center">
+								  	<a id="profileSaveBtn" href="javascript:void(0)" class="btn btn-success btn-lg">Submit</a>
+								</div>
+							</form>
+                			</div>
+                		</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+		<!-- Content End -->
+		<!-- Footer Satrt -->
+		<footer>
+			<div class="bg-white">
+				<div class="container">
+    				<div class="row">
+        				<div class="col-sm-12">
+        					<div class="footer-content"><small>© Copyright 2018, Alegra labs</small></div>
+        				</div> 
+    				</div>
+    			</div>
+    		</div>
+        </footer>
+		<!-- Footer End -->
+		<div class="pageLoader">
+			<div class="loader">
+				<div class="loadingText">Loading..</div>
+				<div class="loadingImage"><img src="images/snaplava.gif" alt="Loading.."></div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<!-- Js libraries start -->
+
+    <!-- Latest compiled JavaScript -->
+    <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/select2/js/select2.full.min.js"></script>
+    <script src="assets/js/croppie.js"></script>
+    
+    <script src="assets/js/config.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<script src="assets/js/logedInUsers.js"></script>
+	<script src="assets/js/edit_profile_upload.js"></script>
+
+	<script>
+      // This example displays an address form, using the autocomplete feature
+      // of the Google Places API to help users fill in the information.
+
+      // This example requires the Places library. Include the libraries=places
+      // parameter when you first load the API. For example:
+      // <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+
+      var placeSearch, autocomplete;
+      var componentForm = {
+        //street_number: 'short_name',
+        //route: 'long_name',
+        locality: 'long_name',
+        administrative_area_level_1: 'short_name',
+        country: 'long_name',
+        postal_code: 'short_name'
+      };
+
+      function initAutocomplete() {
+        // Create the autocomplete object, restricting the search to geographical
+        // location types.
+        autocomplete = new google.maps.places.Autocomplete(
+            /** @type {!HTMLInputElement} */(document.getElementById('userLocation')),
+            {types: ['geocode']});
+
+        // When the user selects an address from the dropdown, populate the address
+        // fields in the form.
+        autocomplete.addListener('place_changed', fillInAddress);
+      }
+
+      function fillInAddress() {
+        // Get the place details from the autocomplete object.
+        var place = autocomplete.getPlace();
+
+        for (var component in componentForm) {
+          document.getElementById(component).value = '';
+          document.getElementById(component).disabled = false;
+        }
+
+        // Get each component of the address from the place details
+        // and fill the corresponding field on the form.
+        for (var i = 0; i < place.address_components.length; i++) {
+          var addressType = place.address_components[i].types[0];
+          if (componentForm[addressType]) {
+            var val = place.address_components[i][componentForm[addressType]];
+            document.getElementById(addressType).value = val;
+          }
+        }
+      }
+
+      // Bias the autocomplete object to the user's geographical location,
+      // as supplied by the browser's 'navigator.geolocation' object.
+      function geolocate() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var geolocation = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+            var circle = new google.maps.Circle({
+              center: geolocation,
+              radius: position.coords.accuracy
+            });
+            autocomplete.setBounds(circle.getBounds());
+          });
+        }
+      }
+    </script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC6iYiFlgwR1jD3egkwtw4bqLPuLyZ3OUM&libraries=places&callback=initAutocomplete"
+        async defer></script>
+	<!-- <script src="https://maps.googleapis.com/maps/api/js?types=(countries)&key=AIzaSyC6iYiFlgwR1jD3egkwtw4bqLPuLyZ3OUM&libraries=places"></script> -->
+	<script src="assets/js/edit-profile.js"></script>
+
+	<script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').fadeOut();
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').fadeIn();
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+
+        });
+    </script>
+	<!-- Js libraries end -->
+</body>
+</html>

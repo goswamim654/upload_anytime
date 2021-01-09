@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Snaplava</title>
+	<link href="../assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <!-- <link href="../assets/fonts/Lato/latofonts.css" rel="stylesheet">
+    <link href="../assets/fonts/LatoLatin/latolatinfonts.css" rel="stylesheet"> -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!-- Scrollbar Custom CSS -->
+    <link href="../assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="../assets/css/sidebar.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="assets/css/admin-style.css" rel="stylesheet" type="text/css" media="screen" />
+	<!-- jQuery library -->
+    <script src="../assets/js/jquery-v3.2.1.min.js"></script>
+</head>
+<body class="colorBg">
+	<div class="wrapper">
+
+		<!-- Sidebar Satrt -->
+		<nav id="sidebar">
+            <div id="dismiss">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <img src="../images/logo-blue.png" alt="Logo">
+            </div>
+
+            <ul class="list-unstyled components">
+            	<div class="userInfo">
+            		<span id="sideBarName"></span>
+				    <span class="userImage">
+				        <img class="img-circle" id="sideBarPhoto">
+				    </span>
+				</div>
+                <!-- <p id="sideBarName">User Name</p>
+                <p><img class="img-circle"  id="sideBarPhoto"></span></p> -->
+                <li class="active">
+                	<a id="user-home" href="home.html">Home</a>
+                </li>
+                <li>
+                    <a id="head-sign-out" href="javascript:void(0)">Signout</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+            </ul> -->
+        </nav>
+		<!-- Sidebar End -->
+
+
+		<!-- Header Start -->
+		<div id="header_div" class="header">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			    <div class="container">
+				    <div class="row">
+				    	<div class="col-xs-12">
+				    		<div class="menuContainer clearfix">
+					    		<div class="navbar-header">
+						          	<a class="navbar-brand-image" href="home.html"><img src="../images/logo-blue.png" alt="Logo"></a>
+						        </div>
+						        <ul id="menu-cnr" class="nav navbar-nav pull-right">
+						          	<li>
+						          		<div class="header-welcome-text">
+						          			Welcome <span id="headerAdminName"></span>
+						          		</div>
+						          	</li>
+						          	<li>
+						          		<div class="header-last-login-time">Last logged in at<br><span id="headerLastLoginTime"></span></div>
+						          	</li>
+						          	<li><a id="sidebarCollapse" href="javascript:void(0)"><i class="fal fa-bars"></i></a></li>
+						        </ul>
+					        </div> 
+				    	</div>
+				    </div>
+				</div> 
+			</nav>
+			<div class="banner">
+			    <div class="container">
+			        
+			    </div>
+			</div>
+		</div>
+		<!-- Header End -->
+		<!-- Content Satrt -->
+		<div class="content">
+            <div id="bodySections" class="sections">
+            	<div class="container">
+            		<div class="row">
+            			<div class="col-sm-12">
+            				<h3 class="admin-home-h3">Numbers of photos: <span id="totalNumberOfPhotos">-</span> in <span id="numberOfCategories">-</span> Categories | <span id="photosUploadedLastTenDats">-</span> Photos added in last 10 days.</h3>
+            			</div>
+            		</div>
+            	</div>
+                <div class="container">
+                	<div class="row">
+                		<div class="col-sm-7">
+                			<ul class="pagination adminHomePagination">
+							</ul>
+                		</div>
+                		<div class="col-sm-5">
+                			<div class="input-group input-daterange adminHomeDateRangeContainer">
+								<input type="text" id="search_from_date" name="from_date" class="form-control" placeholder="Date">
+								<div class="input-group-addon">to</div>
+								<input type="text" id="search_to_date" name="from_date" class="form-control" placeholder="Date">
+								<div onclick="adminHomeImages(1)" id="adminHomeSearchBtn" class="btn input-group-addon">Search</div>
+							</div>
+                		</div>
+                	</div>
+                						
+                	<div class="table-responsive">
+                		<table class="home-table table table-bordered">
+						    <thead>
+						      <tr>
+						        <th>PHOTO</th>
+						        <th>TITLE</th>
+						        <th>BY</th>
+						        <th>EMAIL</th>
+						        <th>DATE</th>
+						        <th>ACTION</th>
+						      </tr>
+						    </thead>
+						    <tbody id="adminHomeImagesTableBody">
+						    	
+						    </tbody>
+						</table>
+                	</div>
+                	<ul class="pagination adminHomePagination">
+					</ul>
+                </div>
+            </div>
+        </div>
+		<!-- Content End -->
+		<!-- Footer Satrt -->
+		<footer> 
+        </footer>
+		<!-- Footer End -->
+		<div class="pageLoader">
+			<div class="loader">
+				<div class="loadingText">Loading..</div>
+				<div class="loadingImage"><img src="https://www.snaplava.com/images/snaplava.gif" alt="Loading.."></div>
+			</div>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<!-- Js libraries start -->
+
+	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="../assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="../assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="../assets/js/config.js"></script>
+	<script src="../assets/js/custom.js"></script>
+	<script src="assets/js/logedInUsers.js"></script>
+	<script src="assets/js/home.js"></script>
+	<script type="text/javascript">
+		$( function() {
+		    var dateFormat = "mm/dd/yy",
+		      from = $( "#search_from_date" )
+		        .datepicker({
+		          defaultDate: "+1w",
+		          changeMonth: true,
+		          changeYear: true
+		          /*numberOfMonths: 3*/
+		        })
+		        .on( "change", function() {
+		          to.datepicker( "option", "minDate", getDate( this ) );
+		        }),
+		      to = $( "#search_to_date" ).datepicker({
+		        defaultDate: "+1w",
+		        changeMonth: true,
+		        changeYear: true
+		        /*numberOfMonths: 3*/
+		      })
+		      .on( "change", function() {
+		        from.datepicker( "option", "maxDate", getDate( this ) );
+		      });
+		 
+		    function getDate( element ) {
+		      var date;
+		      try {
+		        date = $.datepicker.parseDate( dateFormat, element.value );
+		      } catch( error ) {
+		        date = null;
+		      }
+		 
+		      return date;
+		    }
+		  } );
+
+
+        $(document).ready(function () {
+        	
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').fadeOut();
+            });
+
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').fadeIn();
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+	<!-- Js libraries end -->
+</body>
+</html>

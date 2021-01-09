@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Snaplava</title>
+	<link href="assets/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/fontawesome/web-fonts-with-css/css/fontawesome-all.css" rel="stylesheet">
+    <link href="assets/fonts/Lato/latofonts.css" rel="stylesheet">
+    <link href="assets/fonts/LatoLatin/latolatinfonts.css" rel="stylesheet">
+    <!-- Scrollbar Custom CSS -->
+    <link href="assets/css/jquery.mCustomScrollbar.min.css" rel="stylesheet">
+    <link href="assets/css/sidebar.css" rel="stylesheet" type="text/css" media="screen" />
+	<link href="assets/css/style.css" rel="stylesheet" type="text/css" media="screen" />
+
+	<style>
+		/* these are just styles added for this demo page */
+		#canvas{
+			width: 572px;
+			height: 400px;
+			/* background-image: url(images/bg.jpg); */
+			margin: 0 auto;
+		}
+		.movable_div{
+			color: white;
+			font-family: Verdana;
+			cursor: move;
+			position: absolute;
+		}
+		#design{
+			width: 510px;
+			margin: 0 auto;
+			background: purple;
+			border: 1px solid black;
+			color : white;
+			padding: 30px;
+		}
+		#capture {
+		    margin: 25px;
+		}
+
+		#gridOne{
+			width: 50%;
+			overflow: hidden;
+			/* background: blue; */
+			height: inherit;
+    		float: left;
+    		border-right: 2px solid #FFF;
+    		border-left: 4px solid #FFF;
+    		border-bottom: 4px solid #FFF;
+    		border-top: 4px solid #FFF;
+    		/* clip-path: polygon(100% 1%, 103% 65%, -52% 107%, 0% 100%,  0% 30%); */
+		}
+		#gridTwo{
+			width: 50%;
+			overflow: hidden;
+			/* background: red; */
+			height: inherit;
+    		float: right;
+    		border-left: 2px solid #FFF;
+    		border-right: 4px solid #FFF;
+    		border-bottom: 4px solid #FFF;
+    		border-top: 4px solid #FFF;
+    		/* clip-path: polygon(100% 1%, 103% 65%, -52% 107%, 0% 100%,  0% 30%); */
+		}
+
+		.collage-layouts ul{
+			padding:0px;
+		}
+		.collage-layouts ul li {
+		    display: inline-block;
+		    font-size: 50px;
+		    margin-right: 12px;
+		}
+
+		.user-dragable-images ul {
+		    padding: 0;
+		    margin: 0;
+		    max-height: 500px;
+		    overflow-y: scroll;
+		}
+		.user-dragable-images ul li {
+		    list-style: none;
+		    margin-bottom: 10px;
+		    max-width: 160px;
+		}
+		
+		.eachBox {
+		    list-style: none;
+		    /* margin: 3px 3px 3px 0; */
+		    /* padding: 1px; */
+		    float: left;
+		    width: 50%;
+		    /* height: 90px; */
+		    font-size: 4em;
+		    text-align: center;
+		}
+
+		.clip-path{
+			max-width: 300px;
+			float: left;
+			margin-left: 10px;
+		}
+		.clip-path1{
+			clip-path: circle(93px at center);
+		}
+		.clip-path2{
+			clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 100% 100%, 100% 100%);
+  			/* Note that percentages work as well as px */
+		}
+		.clip-path3{
+			clip-path: polygon(100% 1%, 103% 65%, -52% 107%, 0% 100%,  0% 30%);
+		}
+		.clip-path4{
+			clip-path: polygon(-20% -6%, 100% 50%, -19% 109%, 0% 100%,  0% 100%);
+		}
+		.clip-path5{
+			clip-path: polygon(106% -6%, 100% 100%, -11% 109%, 0% 100%,  0% 100%);
+		}
+	</style>
+
+	<!-- jQuery library -->
+    <script src="assets/js/jquery-v3.2.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body class="colorBg">
+	<div class="wrapper">
+
+		<!-- Sidebar Satrt -->
+		<nav id="sidebar">
+            <div id="dismiss">
+                <i class="glyphicon glyphicon-arrow-left"></i>
+            </div>
+
+            <div class="sidebar-header">
+                <img src="images/logo-blue.png" alt="Logo">
+            </div>
+
+            <ul class="list-unstyled components">
+            	<div class="userInfo">
+            		<span id="sideBarName"></span>
+				    <span class="userImage">
+				        <img class="img-circle" id="sideBarPhoto">
+				    </span>
+				</div>
+                <!-- <p id="sideBarName">User Name</p>
+                <p><img class="img-circle"  id="sideBarPhoto"></span></p> -->
+                <li class="active">
+                	<a id="user-home" href="home.html">Home</a>
+                </li>
+                <li class="visible-xs">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">Categories</a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <!-- Categories will load here -->
+                    </ul>
+                </li>
+                <li>
+                    <a id="head-sign-out" href="javascript:void(0)">Signout</a>
+                </li>
+            </ul>
+
+            <!-- <ul class="list-unstyled CTAs">
+                <li><a href="https://bootstrapious.com/tutorial/files/sidebar.zip" class="download">Download source</a></li>
+                <li><a href="https://bootstrapious.com/p/bootstrap-sidebar" class="article">Back to article</a></li>
+            </ul> -->
+        </nav>
+		<!-- Sidebar End -->
+
+
+		<!-- Header Start -->
+		<div id="header_div" class="header">
+			<nav class="navbar navbar-inverse navbar-fixed-top">
+			    <div class="container">
+				    <div class="row">
+				    	<div class="col-xs-12">
+				    		<div class="menuContainer clearfix">
+					    		<div class="navbar-header">
+						          	<a class="navbar-brand-image" href="home.html"><img src="images/logo-blue.png" alt="Logo"></a>
+						        </div>
+						        <ul id="menu-cnr" class="nav navbar-nav pull-right">
+						          	<li>
+						          		<div class="input-group">
+		                                    <input name="q" id="q" value="" class="form-control search-form-control" type="text" placeholder="Search">
+		                                    <span class="dropdown  mega-dropdown input-group-btn input-group-select-box">
+		                                    	<a data-toggle="dropdown" href="#" class="btn btn-default category-btn dropdown-toggle">
+		                                    		<span class="divider">|</span>
+		                                           	Categories <i class="fas fa-caret-down"></i>
+		                                       	</a>
+		                                       	<ul id="searchBoxCategoryContainer" class="dropdown-menu mega-dropdown-menu search-menu" style="display: none;">
+													<!-- Categories will load here -->
+												</ul>
+		                                    </span>
+		                                    <span class="input-group-btn">
+		                                       <button class="btn btn-default search-btn" type="submit" id="serach" name="serach">
+		                                           <i class="fal fa-search"></i>
+		                                       </button>
+		                                    </span>
+		                                </div>
+						          	</li>
+								    <li class="dropdown  mega-dropdown hidden-xs"><a id="" class="dropdown-toggle" data-toggle="dropdown" href="#"><i class="fal fa-th"></i></a>
+								        <ul id="topMenuCategoryContainer" class="dropdown-menu mega-dropdown-menu" style="display: none;">
+								        	<!-- Categories will load here -->
+								        	<!--  Divider if i want to add <li class="divider"></li> -->
+										</ul>
+								    </li>
+
+						          	<li><a id="sidebarCollapse" href="javascript:void(0)"><i class="fal fa-bars"></i></a></li>
+						        </ul>
+					        </div> 
+				    	</div>
+				    </div>
+				</div> 
+			</nav>
+			<div class="banner">
+			    <div class="container">
+			        
+			    </div>
+			</div>
+		</div>
+		<!-- Header End -->
+		<!-- Content Satrt -->
+		<div class="content">
+            <div id="bodySections" class="sections">
+                <div class="container">
+                	<div class="row">
+                		<div class="col-sm-12">
+                			<div class="collage-layouts">
+					        	<ul>
+					        		<li><i class="fal fa-columns"></i></li>
+					        		<li><i class="fal fa-square"></i></li>
+					        		<li><i class="fal fa-th-large"></i></li>
+					        	</ul>
+					        </div>
+                		</div>
+                	</div>
+                	<div class="row">
+                		<div class="col-sm-3">
+                			<div class="user-dragable-images">
+					        	<ul id="dragableUserImages">
+					        		<!-- <li><img class="draggableImage" src="images/bg.jpg"></li>
+					        		<li><img class="draggableImage" src="images/bg.jpg"></li>
+					        		<li><img class="draggableImage" src="images/bg.jpg"></li> -->
+					        	</ul>
+					        </div>
+                		</div>
+                		<div class="col-sm-9 text-center">
+                			<div id="canvas">
+								<div id="sortable">
+								  <!-- <div id="gridOne" class="eachBox">1</div>
+								  <div id="gridTwo" class="eachBox">2</div> -->
+								  <div class="eachBox">3</div>
+								  <div class="eachBox">4</div>
+								  <div class="eachBox">5</div>
+								  <div class="eachBox">6</div>
+								  <div class="eachBox">7</div>
+								  <div class="eachBox">8</div>
+								  <div class="eachBox">9</div>
+								  <div class="eachBox">10</div>
+								</div>
+
+                				<div class="connectedSortImage" id="gridOne">
+                					<!-- <img id="gridOneImg" src="images/bg.jpg"> -->
+                				</div>
+                				<div class="connectedSortImage" id="gridTwo">
+                					<!-- <img id="gridTwoImg" src="images/cool_cat.jpg"> -->
+                				</div>
+
+								<!-- <div class="movable_div">Agurchand</div>
+								<div style="color:#000; font-size: 30px; text-align: center;">How you doing</div>
+								<img src="images/city6.jpg" width="400" height="300"> -->
+							</div>
+							<button class="btn btn-lg btn-success " id="capture">Generate Image</button>
+                		</div>
+                	</div>
+                	<div class="row">
+                		<div class="col-sm-12">
+                			<img src="https://www.snaplava.com/live/public/medium_upload/1521019797003588700.jpg" class="clip-path clip-path1">
+                			<img src="https://www.snaplava.com/live/public/medium_upload/1521019797003588700.jpg" class="clip-path clip-path2">
+                			<img src="https://www.snaplava.com/live/public/medium_upload/1521019797003588700.jpg" class="clip-path clip-path3">
+                			<img src="images/cool_cat.jpg" class="clip-path clip-path4">
+                			<img src="images/cool_cat.jpg" class="clip-path clip-path5">
+                		</div>
+                	</div>
+                </div>
+            </div>
+        </div>
+		<!-- Content End -->
+		<!-- Footer Satrt -->
+		<footer> 
+        </footer>
+		<!-- Footer End -->
+		<div class="pageLoader">
+			<div class="loader">
+				<img src="images/loader.gif" alt="Loading..">		
+			</div>
+		</div>
+	</div>
+	<div class="overlay"></div>
+	<!-- Js libraries start -->
+
+    <!-- Latest compiled JavaScript -->
+    <script src="assets/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="assets/js/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script src="assets/js/config.js"></script>
+	<script src="assets/js/custom.js"></script>
+	<!-- <script src="assets/js/facebook_all.js"></script> -->
+	<script src="assets/js/logedInUsers.js"></script>
+	<script src="assets/js/html2canvas.js"></script>
+	<script type="text/javascript">
+        $(function(){
+
+        	$( "#sortable" ).sortable();
+    		$( "#sortable" ).disableSelection();
+
+    		/*$( "#canvas" ).sortable();
+    		$( "#canvas" ).disableSelection();*/	
+			//here is the hero, after the capture button is clicked
+			//he will take the screen shot of the div and save it as image.
+			$('#capture').click(function(){
+
+				/*html2canvas($("#canvas"), {
+		            onrendered: function(canvas) {
+		                theCanvas = canvas;
+		                document.body.appendChild(canvas);
+
+		                // Convert and download as image 
+		                Canvas2Image.saveAsPNG(canvas); 
+		                $("#output").append(canvas);
+		                // Clean up 
+		                //document.body.removeChild(canvas);
+		            }
+		       	});*/
+
+				//get the div content
+				div_content = document.querySelector("#canvas")
+				//make it as html5 canvas
+				html2canvas(div_content).then(function(canvas) {
+					//change the canvas to jpeg image
+					data = canvas.toDataURL('image/jpeg');
+					
+					//then call a super hero php to save the image
+					save_img(data);
+				});
+			});	
+
+
+
+			/* Get All Images Start */
+			var request = $.ajax({
+			    url: BASE_URL+"live/public/api/v1/home/images",
+			    headers: {
+			        "Authorization" : "Bearer "+token
+			    },
+			    data: {
+			    	"pagination_limit" : 20
+			    },
+			    type: "GET",
+			    beforeSend:function(){
+			        showLoader();
+			        //$('#signinErrorMsg').html('');
+			    },
+			    complete:function(jqXHR, status){
+			        hideLoader();
+			    }
+		    });
+
+			request.done(function(response) {
+		      	var responseData = null;
+		      	try {
+		          	responseData = JSON.parse(response); 
+		      	} catch (e) {
+		          	responseData = response;
+		      	}
+
+		      	//console.log(responseData);
+		      	var status = responseData.status;
+				switch (status) { 
+					case 1: 
+						console.log(responseData.message);
+						break;
+					case 2: 
+						//alert('2');
+						console.log(responseData.content.data);
+						/*if(typeof responseData.content.pagination.next_page !== "undefined" && responseData.content.pagination.next_page != null){
+							$("#next_page").val(responseData.content.pagination.next_page);
+						}*/
+						$.each( responseData.content.data, function( key, value ) {
+							var rowData = null;
+					      	try {
+					          	rowData = JSON.parse(value); 
+					      	} catch (e) {
+					          	rowData = value;
+					      	}
+						  	//alert( key + ": " + rowData.image );
+						  	if(rowData.id){
+						  		/*if(rowData.user_primary_profile_photo !== null && rowData.user_primary_profile_photo !=""){
+						  			var userProfilePhoto=rowData.user_primary_profile_photo;
+						  		}else{
+						  			var userProfilePhoto=rowData.user_secondary_profile_photo;
+						  		}*/
+						  		//var userName=isset(rowData.userName) ? rowData.userName : ;
+						  		
+						  		var html = '';
+								html+='<li><img class="draggableImage" src="'+rowData.image_medium+'" alt="Image"></li>';
+								$("#dragableUserImages").append(html);
+
+						  	}else{
+						  		console.log("Something went wrong : "+rowData);
+						  	}
+						  	
+						});
+						$(".draggableImage").draggable({
+							revert: "invalid", // when not dropped, the item will revert back to its initial position
+						    containment: "document",
+						    helper: "clone",
+						    cursor: "move"
+						});
+						break;
+					case 3: 
+						console.log(responseData.message);
+						break;
+					case 4: 
+						console.log(responseData.message);
+						break;	
+					default:
+						console.log('Something went wrong! please try again later');
+				}
+		    });
+
+		    request.fail(function(jqXHR, textStatus) {
+		      	var errorData = null;
+		      	try {
+		          	errorData = JSON.parse(jqXHR); 
+		      	} catch (e) {
+		          	errorData = jqXHR;
+		      	}
+		      	console.log("Error : "+errorData);
+		    });
+			/* Get All Images End */
+
+
+
+			/*$( "#gridOne, #gridTwo" ).sortable({
+		      connectWith: ".connectedSortImage",
+		      revert: true
+		    }).disableSelection();*/
+			/*$( "#canvas" ).sortable({
+		      	revert: true
+		    });*/
+		    //$( "#gridOne, #gridTwo" ).disableSelection();
+			$(".draggableImage").draggable({
+				revert: "invalid", // when not dropped, the item will revert back to its initial position
+			    containment: "document",
+			    helper: "clone",
+			    cursor: "move"
+			});
+
+			$( "#gridTwo" ).droppable({
+        		accept: ".draggableImage",
+        		hoverClass: "ui-state-active",
+			    drop: function (event, ui) {
+			    	console.log($(ui.draggable).clone());
+			        $(this).html($(ui.draggable).clone().draggable());
+			    }
+			});
+
+			$( "#gridOne" ).droppable({
+        		accept: ".draggableImage",
+        		hoverClass: "ui-state-active",
+			    drop: function (event, ui) {
+			        $(this).html($(ui.draggable).clone().draggable());
+			    }
+
+			    /*drop: function( event, ui ) {
+			      	var $dropZone=$(this), $imageVariable=ui.draggable;
+			      	console.log(ui.draggable);
+			      	//$(this).html('Here i am');
+			      	$dropZone.html($imageVariable);*/
+			      	/*$item.append( recycle_icon ).appendTo( $list ).fadeIn(function() {
+			          $item
+			            .animate({ width: "48px" })
+			            .find( "img" )
+			              .animate({ height: "36px" });
+			        });*/
+			        /*$( this )
+			          .addClass( "ui-state-highlight" )
+			          .find( "p" )
+			            .html( "Dropped!" );*/
+			      /*}*/
+			});
+
+		});
+
+		//to save the canvas image
+		function save_img(data){
+			//ajax method.
+			$.post(BASE_URL+'live/public/api/v1/save/collage', {data: data}, function(res){
+				console.log(res);
+				//if the file saved properly, trigger a popup to the user.
+				if(res != ''){
+					yes = confirm('File saved, click ok to see it!');
+					if(yes){
+						location.href =BASE_URL+'files/'+res+'.jpg';
+					}
+				}
+				else{
+					alert('something wrong');
+				}
+			});
+		}
+    </script>
+	<!-- Js libraries end -->
+</body>
+</html>
